@@ -45,17 +45,63 @@
 // }
 // console.log(findBestEmployee(employee));
 
-4 
-function findBestEmployee(employees){
-    let totalSalary= 0;
-    for(const salary of Object.values(employees)){
-        totalSalary += salary;
+// 4 
+// function findBestEmployee(employees){
+//     let totalSalary= 0;
+//     for(const salary of Object.values(employees)){
+//         totalSalary += salary;
+//     }
+//     return totalSalary;
+// }
+// const employees ={
+//     Jamal: 500,
+//     Muhamed: 700,
+//     Dima: 900,
+// }
+// console.log(findBestEmployee(employees));
+
+// 5
+// function getAllPropValues(arr, prop) {
+//   const values = [];
+
+//   for (const obj of arr) {
+//     if (prop in obj) {
+//       values.push(obj[prop]);
+//     }
+//   }
+
+//   return values;
+// }
+
+// const products = [
+//   { name: "Apple", price: 100 },
+//   { name: "Banana", price: 50 },
+//   { name: "Orange" },
+// ];
+
+// console.log(getAllPropValues(products, "name"));
+// console.log(getAllPropValues(products, "price"));
+// console.log(getAllPropValues(products, "quantity"));
+
+6
+function calculateTotalPrice(allProducts, productName) {
+
+    const product = allProducts.find(item => item.name === productName);
+  
+    if (product) {
+      return product.price * product.quantity;
     }
-    return totalSalary;
-}
-const employees ={
-    Jamal: 500,
-    Muhamed: 700,
-    Dima: 900,
-}
-console.log(findBestEmployee(employees));
+  
+    return 0;
+  }
+  
+  const products = [
+    { name: "Apple", price: 10, quantity: 3 },
+    { name: "Banana", price: 5, quantity: 6 },
+    { name: "Orange", price: 8, quantity: 4 },
+  ];
+  
+  console.log(calculateTotalPrice(products, "Apple")); 
+  console.log(calculateTotalPrice(products, "Banana")); 
+  console.log(calculateTotalPrice(products, "Orange")); 
+  console.log(calculateTotalPrice(products, "Pineapple"));
